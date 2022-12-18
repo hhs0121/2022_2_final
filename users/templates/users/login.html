@@ -1,21 +1,19 @@
-<!-- users>login.html -->
-
 {% extends 'cal/base.html' %}
-{% block content %}
 
 {% block title %}
 로그인
 {% endblock %}
 
+{% block content %}
 <form method="post" action="{% url 'users:login' %}">
   {% csrf_token %}
   {% include 'users/form_errors.html' %}
   <div>
-    <label>사용자 ID</label>
+    <label class="btn">사용자 ID</label>
     <input type="text" name="username" id="username">
   </div>
   <div>
-    <label>비밀번호</label>
+    <label class="btn">비밀번호</label>
     <input type="password" name="password" id="password">
   </div>
   <button type="submit" class="btn btn-info left">로그인</button>

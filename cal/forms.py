@@ -1,6 +1,7 @@
 from django.forms import ModelForm, DateInput
 from cal.models import Event
 
+
 class EventForm(ModelForm):
   class Meta:
     model = Event
@@ -14,6 +15,3 @@ class EventForm(ModelForm):
     super(EventForm, self).__init__(*args, **kwargs)
     self.fields['start_time'].input_formats = ('%Y-%m-%dT%H:%M',)
     self.fields['end_time'].input_formats = ('%Y-%m-%dT%H:%M',)
-
-
-
